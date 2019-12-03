@@ -1,27 +1,20 @@
 import {CREATE_QUIZ_QUESTION, RESERT_QUIZ} from "../actions/actionTypes";
 
 const initialState = {
-    quiz:[]
+  quiz:[]
 };
 
 export default function createReducer(state=initialState, action){
-    switch (action.type) {
-        case CREATE_QUIZ_QUESTION:
-            return{
-                ...state, quiz: [...state.quiz, action.item]
-            };
-        case RESERT_QUIZ:
-            return{
-                ...state, quiz:[]
-            }
-
-
-
-
-        default:
-            return state
-
-    }
-
-
+  switch (action.type) {
+    case CREATE_QUIZ_QUESTION:
+      return{
+        ...state, quiz: [...state.quiz, action.item]
+      };
+    case RESERT_QUIZ:
+      return{
+        ...state, quiz:[]
+      };
+    default:
+      return state
+  }
 }

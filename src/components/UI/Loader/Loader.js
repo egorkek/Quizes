@@ -1,9 +1,9 @@
 import React from 'react'
 import classes from './Loader.css'
 
-const Loader = (props)=>{
+const Loader = () => {
 
-return(
+return (
     <div className={classes.Center}>
         <div className={classes.Loader}>
             <div/>
@@ -12,8 +12,7 @@ return(
             <div/>
         </div>
     </div>
-
 )
-
 }
-export default Loader
+
+export default Loader;

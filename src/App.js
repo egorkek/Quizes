@@ -22,9 +22,9 @@ class App extends Component {
               <Route path='/' component={QuizList}/>
               <Redirect to={'/'}/>
           </Switch>
-
       );
-      if (this.props.isAutenticated){
+
+      if (this.props.isAutenticated) {
         routes = (
             <Switch>
                 <Route path='/quiz/:id' component={Quiz}/>
@@ -32,15 +32,12 @@ class App extends Component {
                 <Route path='/logout' component={Logout}/>
                 <Route path='/' component={QuizList}/>
                 <Redirect to={'/'}/>
-
-
             </Switch>
-
         )
       }
     return (
       <Layout>
-          {routes}
+        {routes}
       </Layout>
     );
   }
@@ -51,10 +48,12 @@ function mapStateToProps(state) {
   }
     
 }
+
 function mapDispatchToProps(dispatch) {
   return{
-    autoLogin: ()=>dispatch(autoLogin())
+    autoLogin: () => dispatch(autoLogin())
   }
 
 }
+
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
